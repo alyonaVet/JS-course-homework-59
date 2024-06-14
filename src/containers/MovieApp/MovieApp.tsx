@@ -1,10 +1,24 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import AddFilmForm from '../../components/AddFilmForm/AddFilmForm';
 import {FilmName} from '../../types';
 import FilmField from '../../components/FilmField/FilmField';
 
 const MovieApp = () => {
   const [filmTitles, setFilmsTitles] = useState<FilmName[]>([]);
+
+  useEffect(() => {
+    const items: string | null = localStorage.getItem('films');
+    if (items) {
+      setFilmsTitles(JSON.parse(items));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (filmTitles.length > 0) {
+      localStorage.setItem('films', JSON.stringify(filmTitles));
+    }
+  }, [filmTitles]);
+
 
   const addFilm = (newFilm: FilmName) => {
     setFilmsTitles((prevFilms) => [...prevFilms, newFilm]);
