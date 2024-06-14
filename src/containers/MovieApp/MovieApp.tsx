@@ -7,16 +7,14 @@ const MovieApp = () => {
   const [filmTitles, setFilmsTitles] = useState<FilmName[]>([]);
 
   useEffect(() => {
-    const items: string | null = localStorage.getItem('films');
+    const items: string | null = localStorage.getItem('filmTitles');
     if (items) {
       setFilmsTitles(JSON.parse(items));
     }
   }, []);
 
   useEffect(() => {
-    if (filmTitles.length > 0) {
-      localStorage.setItem('films', JSON.stringify(filmTitles));
-    }
+    localStorage.setItem('filmTitles', JSON.stringify(filmTitles));
   }, [filmTitles]);
 
 
