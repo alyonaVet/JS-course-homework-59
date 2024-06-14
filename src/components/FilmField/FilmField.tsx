@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../Button/Button';
 
 interface FilmFieldProps {
   title: string;
@@ -17,7 +18,7 @@ const FilmField: React.FC<FilmFieldProps> = React.memo(({title, onRemove, onChan
             value={title}/>
         </div>
         <div className="col-auto">
-          <button type="submit" className="btn btn-danger py-1" onClick={onRemove}>Delete</button>
+          <Button type="button" className="btn btn-danger py-1" onClick={onRemove} children="Delete" />
         </div>
       </div>
     );
