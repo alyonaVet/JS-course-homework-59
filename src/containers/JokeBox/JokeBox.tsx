@@ -30,7 +30,7 @@ const JokeBox = () => {
 
 
   return (
-    <div className="container d-flex flex-column align-items-center justify-content-center mt-3" style={{ height: '250px' }}>
+    <div className="container d-flex flex-column align-items-center justify-content-center mt-3" style={{ height: '400px' }}>
       <div>
         <JokeCard value={joke ? joke.value : ''}/>
       </div>
