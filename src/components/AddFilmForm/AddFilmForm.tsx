@@ -25,7 +25,7 @@ const AddFilmForm: React.FC<AddFilmProps> = ({onSubmit}) => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-3">
       <h4>Add a film title</h4>
       <form className="row mt-3 align-items-center" onSubmit={onFormSubmit}>
         <div className="col-6">
